@@ -10,7 +10,7 @@ setAttr "polySphere4.subdivisionsHeight" 15;
 scale -r 0.226478 0.226478 0.226478 ;
 move -r 1.396655 9.797392 -0.526051  ;
 duplicate -rr;
-setAttr "pSphere16.translateZ" 0.526;
+move -r 0 0 1.019679 ;
 polyCylinder -r 1 -h 2 -sx 20 -sy 1 -sz 1 -ax 0 1 0 -rcp 0 -cuv 3 -ch 1;
 move -r 0 11.731483 0 ;
 duplicate -rr;
