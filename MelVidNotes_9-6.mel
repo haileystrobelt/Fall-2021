@@ -1,0 +1,64 @@
+//This will allow us to create/store two 
+//separate cubes. 
+
+string $myCube[] = `polyCube`;
+
+string $anotherCube[] = `polyCube`;
+
+select $anotherCube
+
+/* Use this to start and stop comments. */
+
+// Condition Statements:
+
+if (condition) {
+    print "Hello";
+} else { //also could write else if here.
+    print "Goodbye";
+}
+if ($condition) print "Hello";
+
+int $foo = 50;
+int $spam = 23;
+
+int $age = ($foo > $spam) ? 18 : 23; //if statement is true,
+//the value will be 18,
+//else it will be 23.
+
+//Switch Statements:
+
+string $myColor = "green";
+
+switch ($myColor) {
+    case "green":
+        print "Color is green";
+        break;
+    case "red":
+        print "This is the color of an apple";
+        break;
+    default:
+        print "This is not a known color";
+        break;
+};
+
+//This can also be written as:
+
+if ($myColor == "green") {
+    print "Color is green";
+} else if ($myColor == "red) {
+    print "This is the color of an apple";
+} else {
+    print "This is not a known color";
+};
+
+
+//Check for sections:
+
+string $selection[] = `ls -selection`; //ls == list
+
+if (size(%selection) == 0) {
+    print "Nothing is selected";
+} else {
+    print "You have something selected;"
+    print $selection;
+};
