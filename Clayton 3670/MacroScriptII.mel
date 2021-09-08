@@ -1,0 +1,3 @@
+string $objStorage[] = `polyCube`;
+//Delete History
+scriptEditorInfo -clearHistory;
