@@ -62,3 +62,55 @@ if (size(%selection) == 0) {
     print "You have something selected;"
     print $selection;
 };
+
+
+//The For Loop
+for ($i = 10; $i>0; $i--) {
+    print("This number is " +$i+"\n");
+//break will stop the loop at 4
+    if $i == 4) {
+        break;
+    }
+}
+
+//The For Each Loop
+string $usernames[] = {"Bob", "Linda", "Tina", "Gene", "Louise"};
+for ($user in $usernames) {
+//Use continue to skip value "Tina"
+    if ($user == "Tina") {
+        continue;
+    }
+    print("The user is "+$user+"\n");
+}
+
+//The While Loop
+int $foo = 10;
+while ($foo > 0) {
+    print("The number is " +$foo+ "\n");
+    $foo = $foo - 1;
+}
+
+//The Do While Loop
+int $foo = 0;
+do {
+    print $foo;
+    print "\n";
+    $foo += 2;
+} while ($foo<6)
+
+
+//ie: For loop using selections
+string $selection[] = `ls -selection`;
+for ($obj in $selection) {
+    print($obj+"\n");
+
+//Same thing using queries:
+string $selection[] = `ls -selection`;
+for ($obj in $selection) {
+    string $objType = `objectType $obj`;
+    print($obj+" "+$objType+"\n");
+
+
+
+
+
