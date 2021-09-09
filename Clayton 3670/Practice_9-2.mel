@@ -7,7 +7,7 @@ $selections = `ls -sl`; //selection shortcut: sl
 string $objects[];
 
 string $temp[];
-$temp = 'polySphere -r 1 -sx 20 -sy 20 -ax 0 1 0 -cuv 2 -ch 1`;
+$temp = `polySphere -r 1 -sx 20 -sy 20 -ax 0 1 0 -cuv 2 -ch 1`;
 stringArrayInsertAtIndex(0, $objects, $temp[0]);
 
 $temp = 'polySphere -r 1 -sx 20 -sy 20 -ax 0 1 0 -cuv 2 -ch 1`;
