@@ -67,7 +67,7 @@ setAttr "polyExtrudeFace1.localTranslate" -type double3 0.104192 0 0.336836 $hat
 //Bottom Hat
 $bHat = `duplicate -rr $hat`;
 move -r 0 -1.048626 0 $bHat[0];
-scale -r 1.722446  0.221985 1.722446 $bHat[0];
+scale -r 1.722446  0.4 1.722446 $bHat[0];
 polyBevel3 -fraction 0.2 -offsetAsFraction 1 -autoFit 1 -depth 1 -mitering 0 -miterAlong 0 -chamfer 1 
 -segments 1 -worldSpace 1 -smoothingAngle 30 -subdivideNgons 1 -mergeVertices 1 
 -mergeVertexTolerance 0.0001 -miteringAngle 180 -angleTolerance 180 -ch 1 $bHat[0];
@@ -96,7 +96,7 @@ rotate -r -os -fo 0 0 24.030047 $mButton[0];
 
 //Nose
 $Nose = `polyCone -r 1 -h 2 -sx 20 -sy 1 -sz 0 -ax 0 1 0 -rcp 0 -cuv 3 -ch 1`;
-setAttr "pCone1.rotateZ" -90;
+rotate -r 0 0 -90 $Nose[0];
 scale -r 0.271283 1 0.271283 $Nose[0];
 scale -r 1 0.761719 1 $Nose[0];
 move -r 0 9.398454 0 $Nose[0];
