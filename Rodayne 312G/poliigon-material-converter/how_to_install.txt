@@ -1,0 +1,11 @@
+For the full instructions on use, go to:
+https://help.poliigon.com/en/articles/2540839-poliigon-material-converter-addon-for-blender
+
+Step 1: Download the zip file to anywhere on your hard drive, do not unzip it.
+Step 2: Open a new instance of Blender
+Step 3: Go to File>User Preferences then Addons.
+Step 4: At the bottom, click Install from File
+Step 5: Locate to the zipped download and double click it to install.
+Step 6: Search for poliigon if the add-on does not immediately appear, and click the tick box to enable the add-on overall.
+Step 7: Close user preferences (press "save user preferences” first so you don’t have to enable it each time!)
+Step 8: You're ready to start using it! Go to the materials tab to find the Poliigon panel

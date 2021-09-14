@@ -1,0 +1,520 @@
+{
+    "defaults": [
+        {
+            "node": "Vector Math",
+            "socket": "Vector",
+            "socket_id": "Vector",
+            "value": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        {
+            "node": "Vector Math",
+            "socket": "Vector",
+            "socket_id": "Vector_001",
+            "value": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        {
+            "node": "Vector Math",
+            "socket": "Vector",
+            "socket_id": "Vector_002",
+            "value": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        {
+            "node": "Vector Math",
+            "socket": "Scale",
+            "socket_id": "Scale",
+            "value": 1.0
+        },
+        {
+            "node": "Vector Math.002",
+            "socket": "Vector",
+            "socket_id": "Vector",
+            "value": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        {
+            "node": "Vector Math.002",
+            "socket": "Vector",
+            "socket_id": "Vector_001",
+            "value": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        {
+            "node": "Vector Math.002",
+            "socket": "Vector",
+            "socket_id": "Vector_002",
+            "value": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        {
+            "node": "Vector Math.002",
+            "socket": "Scale",
+            "socket_id": "Scale",
+            "value": 1.0
+        },
+        {
+            "node": "Combine XYZ.001",
+            "socket": "X",
+            "socket_id": "X",
+            "value": 1.0
+        },
+        {
+            "node": "Combine XYZ.001",
+            "socket": "Z",
+            "socket_id": "Z",
+            "value": 1.0
+        },
+        {
+            "node": "Vector Math.001",
+            "socket": "Vector",
+            "socket_id": "Vector",
+            "value": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        {
+            "node": "Vector Math.001",
+            "socket": "Vector",
+            "socket_id": "Vector_001",
+            "value": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        {
+            "node": "Vector Math.001",
+            "socket": "Vector",
+            "socket_id": "Vector_002",
+            "value": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        {
+            "node": "Vector Math.001",
+            "socket": "Scale",
+            "socket_id": "Scale",
+            "value": 1.0
+        },
+        {
+            "node": "Group Output",
+            "socket": "UV",
+            "socket_id": "Output_11",
+            "value": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        {
+            "node": "Vector Rotate",
+            "socket": "Vector",
+            "socket_id": "Vector",
+            "value": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        {
+            "node": "Vector Rotate",
+            "socket": "Center",
+            "socket_id": "Center",
+            "value": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        {
+            "node": "Vector Rotate",
+            "socket": "Axis",
+            "socket_id": "Axis",
+            "value": [
+                0.0,
+                0.0,
+                1.0
+            ]
+        },
+        {
+            "node": "Vector Rotate",
+            "socket": "Angle",
+            "socket_id": "Angle",
+            "value": -0.04712388664484024
+        },
+        {
+            "node": "Vector Rotate",
+            "socket": "Rotation",
+            "socket_id": "Rotation",
+            "value": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        {
+            "node": "Math",
+            "socket": "Value",
+            "socket_id": "Value",
+            "value": 0.5
+        },
+        {
+            "node": "Math",
+            "socket": "Value",
+            "socket_id": "Value_001",
+            "value": 0.5
+        }
+    ],
+    "inputs": [
+        {
+            "default": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "max": 10000.0,
+            "min": -10000.0,
+            "name": "UV",
+            "type": "VECTOR"
+        },
+        {
+            "default": 1.0,
+            "max": 500.0,
+            "min": 0.0,
+            "name": "Scale",
+            "type": "VALUE"
+        },
+        {
+            "default": 1.0,
+            "max": 2.0,
+            "min": 0.0,
+            "name": "Aspect Ratio",
+            "type": "VALUE"
+        },
+        {
+            "default": 0.0,
+            "max": 50.0,
+            "min": -50.0,
+            "name": "Translate X",
+            "type": "VALUE"
+        },
+        {
+            "default": 0.0,
+            "max": 50.0,
+            "min": -50.0,
+            "name": "Translate Y",
+            "type": "VALUE"
+        },
+        {
+            "default": 0.0,
+            "max": 360.0,
+            "min": -360.0,
+            "name": "Rotation",
+            "type": "VALUE"
+        }
+    ],
+    "links": [
+        {
+            "from": "Group Input",
+            "from_id": "Input_1",
+            "from_socket": "UV",
+            "to": "Vector Math",
+            "to_id": "Vector",
+            "to_socket": "Vector"
+        },
+        {
+            "from": "Group Input",
+            "from_id": "Input_5",
+            "from_socket": "Translate X",
+            "to": "Combine XYZ",
+            "to_id": "X",
+            "to_socket": "X"
+        },
+        {
+            "from": "Group Input",
+            "from_id": "Input_7",
+            "from_socket": "Translate Y",
+            "to": "Combine XYZ",
+            "to_id": "Y",
+            "to_socket": "Y"
+        },
+        {
+            "from": "Group Input",
+            "from_id": "Input_9",
+            "from_socket": "Aspect Ratio",
+            "to": "Combine XYZ.001",
+            "to_id": "Y",
+            "to_socket": "Y"
+        },
+        {
+            "from": "Vector Math",
+            "from_id": "Vector",
+            "from_socket": "Vector",
+            "to": "Vector Math.002",
+            "to_id": "Vector",
+            "to_socket": "Vector"
+        },
+        {
+            "from": "Combine XYZ",
+            "from_id": "Vector",
+            "from_socket": "Vector",
+            "to": "Vector Math.001",
+            "to_id": "Vector_001",
+            "to_socket": "Vector"
+        },
+        {
+            "from": "Vector Math.002",
+            "from_id": "Vector",
+            "from_socket": "Vector",
+            "to": "Vector Math.001",
+            "to_id": "Vector",
+            "to_socket": "Vector"
+        },
+        {
+            "from": "Combine XYZ.001",
+            "from_id": "Vector",
+            "from_socket": "Vector",
+            "to": "Vector Math.002",
+            "to_id": "Vector_001",
+            "to_socket": "Vector"
+        },
+        {
+            "from": "Group Input",
+            "from_id": "Input_13",
+            "from_socket": "Scale",
+            "to": "Vector Math",
+            "to_id": "Vector_001",
+            "to_socket": "Vector"
+        },
+        {
+            "from": "Vector Math.001",
+            "from_id": "Vector",
+            "from_socket": "Vector",
+            "to": "Vector Rotate",
+            "to_id": "Vector",
+            "to_socket": "Vector"
+        },
+        {
+            "from": "Group Input",
+            "from_id": "Input_15",
+            "from_socket": "Rotation",
+            "to": "Math",
+            "to_id": "Value",
+            "to_socket": "Value"
+        },
+        {
+            "from": "Vector Rotate",
+            "from_id": "Vector",
+            "from_socket": "Vector",
+            "to": "Group Output",
+            "to_id": "Output_11",
+            "to_socket": "UV"
+        },
+        {
+            "from": "Math",
+            "from_id": "Value",
+            "from_socket": "Value",
+            "to": "Vector Rotate",
+            "to_id": "Angle",
+            "to_socket": "Angle"
+        }
+    ],
+    "nodes": {
+        "Combine XYZ": {
+            "hide": true,
+            "label": "",
+            "location": [
+                -88,
+                -157
+            ],
+            "parent": "Frame.002",
+            "type": "COMBXYZ",
+            "type_id": "ShaderNodeCombineXYZ"
+        },
+        "Combine XYZ.001": {
+            "hide": true,
+            "label": "",
+            "location": [
+                -123,
+                -101
+            ],
+            "parent": "Frame.001",
+            "type": "COMBXYZ",
+            "type_id": "ShaderNodeCombineXYZ"
+        },
+        "Frame": {
+            "height": 90.00003051757812,
+            "hide": false,
+            "label": "Scale",
+            "label_size": 64,
+            "location": [
+                -718,
+                437
+            ],
+            "shrink": true,
+            "type": "FRAME",
+            "type_id": "NodeFrame",
+            "width": 200.0
+        },
+        "Frame.001": {
+            "height": 145.97232055664062,
+            "hide": false,
+            "label": "Aspect Adjust",
+            "label_size": 64,
+            "location": [
+                -488,
+                272
+            ],
+            "shrink": true,
+            "type": "FRAME",
+            "type_id": "NodeFrame",
+            "width": 369.44927978515625
+        },
+        "Frame.002": {
+            "height": 145.23928833007812,
+            "hide": false,
+            "label": "Translate",
+            "label_size": 64,
+            "location": [
+                -142,
+                328
+            ],
+            "shrink": true,
+            "type": "FRAME",
+            "type_id": "NodeFrame",
+            "width": 360.322021484375
+        },
+        "Frame.003": {
+            "height": 147.63751220703125,
+            "hide": false,
+            "label": "Rotation",
+            "label_size": 64,
+            "location": [
+                400,
+                400
+            ],
+            "shrink": true,
+            "type": "FRAME",
+            "type_id": "NodeFrame",
+            "width": 360.2204895019531
+        },
+        "Group Input": {
+            "hide": false,
+            "label": "",
+            "location": [
+                -1082,
+                127
+            ],
+            "type": "GROUP_INPUT",
+            "type_id": "NodeGroupInput"
+        },
+        "Group Output": {
+            "hide": false,
+            "label": "",
+            "location": [
+                492,
+                262
+            ],
+            "type": "GROUP_OUTPUT",
+            "type_id": "NodeGroupOutput"
+        },
+        "Math": {
+            "hide": true,
+            "label": "",
+            "location": [
+                -253,
+                -230
+            ],
+            "operation": "RADIANS",
+            "parent": "Frame.003",
+            "type": "MATH",
+            "type_id": "ShaderNodeMath"
+        },
+        "Vector Math": {
+            "hide": true,
+            "label": "",
+            "location": [
+                -110,
+                -209
+            ],
+            "operation": "MULTIPLY",
+            "parent": "Frame",
+            "type": "VECT_MATH",
+            "type_id": "ShaderNodeVectorMath"
+        },
+        "Vector Math.001": {
+            "hide": true,
+            "label": "",
+            "location": [
+                72,
+                -102
+            ],
+            "operation": "ADD",
+            "parent": "Frame.002",
+            "type": "VECT_MATH",
+            "type_id": "ShaderNodeVectorMath"
+        },
+        "Vector Math.002": {
+            "hide": true,
+            "label": "",
+            "location": [
+                45,
+                -45
+            ],
+            "operation": "MULTIPLY",
+            "parent": "Frame.001",
+            "type": "VECT_MATH",
+            "type_id": "ShaderNodeVectorMath"
+        },
+        "Vector Rotate": {
+            "hide": true,
+            "label": "",
+            "location": [
+                -92,
+                -173
+            ],
+            "parent": "Frame.003",
+            "type": "VECTOR_ROTATE",
+            "type_id": "ShaderNodeVectorRotate"
+        }
+    },
+    "outputs": [
+        {
+            "default": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "name": "UV",
+            "type": "VECTOR"
+        }
+    ],
+    "render_engines": [
+        "CYCLES",
+        "BLENDER_EEVEE"
+    ]
+}
