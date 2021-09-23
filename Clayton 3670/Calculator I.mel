@@ -105,10 +105,10 @@ global proc float Mode (float $numbers[])
 		$next = $first + 1; //next will be iteration of first
 
 		if $sorted[$next] != $sorted[$first]:
-			float $values[] += $sorted[$next]; //but num into array
+			float $values[] += $sorted[$next]; //put num into array
 			float $freq += 1; //add new freq into freq array
 		else:
-			float $freq += `$freq[$first] + 1`; //if numbers are the same, we will add to the current frequent by 1
+			float $freq += `$freq[$first] + 1`; //if numbers are the same, we will add to the current freq by 1
 
 		$first = $next; //loop to new spot
 	}
