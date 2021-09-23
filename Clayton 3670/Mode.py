@@ -26,6 +26,7 @@ def Mode(arr):
                     freq[first-1] = (freq[first-1] + 1)
                     break
             first = next # loop to new spot in sorted arr
+           
 
         # find highest freq in freq arr
         highest = freq[0]
