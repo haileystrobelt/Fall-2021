@@ -259,7 +259,7 @@ int $arr[] = {3,4,1,5,4};
 
 $sorted = `sort $arr`; //sort array
 //init values
-int $values[] = []; //init values array
+int $values[]; //init values array
 int $freq[1]; //freq starts at 1
 int $first = 0; //first index begins
 $arr_count = 0; //going to keep track of array index
@@ -268,13 +268,13 @@ int $next; //init next val
 
 for ($i=0; $i<(size($sorted)); $i++) //run thru sorted list
 {	
-    print $values;
-    print "valsEnd";
     $arr_count += 1; //need iterate to go to next values. Going to be values[1, 2, 3,..]
-    
+    print $first;
+    print "first";
     $next = $first + 1; //next will be iteration of first
     
     if ($next == size($sorted)) {
+
         break;
     } if ($sorted[$next] != $sorted[$first]) {
         $values[$arr_count] = $sorted[$next]; //put next number into values arr
