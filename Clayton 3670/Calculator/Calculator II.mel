@@ -1,62 +1,3 @@
-global proc Calculator(float $numbers[], string $operation)
-{
-    if ($operation == "Add")
-    {
-        print("The sum of ");
-        print(floatArrayToString($numbers, " + "));
-        print( " is " + (Add($numbers)));
-
-    }
-
-    
-    if ($operation == "Subtract")
-    {
-        print("The subtraction of ");
-        print(floatArrayToString($numbers, " - "));
-        print( " is " + (Subtract($numbers)));
-    }
-    
-    if ($operation == "Divide")
-    {
-        print("The division of ");
-        print(floatArrayToString($numbers, " \ "));
-        print( " is " + (Divide($numbers)));
-    }
-    
-    if ($operation == "Multiply")
-    {
-        print("The multiplication of ");
-        print(floatArrayToString($numbers, " * "));
-        print( " is " + (Multiply($numbers)));
-    }
-    
-    if ($operation == "Power")
-    {
-        print (Power($numbers[0], $numbers[1]));
-        print (" is " + $numbers[0] + " to the power of " + $numbers[1]);
-    }
-    
-    if ($operation == "Mean")
-    {
-        print (Mean($numbers) + " is the mean of ");
-        print(floatArrayToString($numbers, " , "));
-
-    }
-    if ($operation == "Median")
-    {
-        print (Median($numbers) + " is the median of ");
-        print(floatArrayToString($numbers, " , "));
-    }
-    
-    if ($operation == "Mode")
-    {
-        print (Mode($numbers) + " is the mode of ");
-        print(floatArrayToString($numbers, " , "));
-    }
-}  
-   
-    
- 
 global proc float Add(float $numbers[])
 {
 	float $sum = $numbers[0];
@@ -217,7 +158,67 @@ Mode({4, 5, 6, 2, 3, 4, 6, 4});
 
 
 
+global proc Calculator(float $numbers[], string $operation)
+{
+    if ($operation == "Add")
+    {
+        print("The sum of ");
+        print(floatArrayToString($numbers, " + "));
+        print( " is " + (Add($numbers)));
+
+    }
+
+    
+    if ($operation == "Subtract")
+    {
+        print("The subtraction of ");
+        print(floatArrayToString($numbers, " - "));
+        print( " is " + (Subtract($numbers)));
+    }
+    
+    if ($operation == "Divide")
+    {
+        print("The division of ");
+        print(floatArrayToString($numbers, " \ "));
+        print( " is " + (Divide($numbers)));
+    }
+    
+    if ($operation == "Multiply")
+    {
+        print("The multiplication of ");
+        print(floatArrayToString($numbers, " * "));
+        print( " is " + (Multiply($numbers)));
+    }
+    
+    if ($operation == "Power")
+    {
+        print (Power($numbers[0], $numbers[1]));
+        print (" is " + $numbers[0] + " to the power of " + $numbers[1]);
+    }
+    
+    if ($operation == "Mean")
+    {
+        print (Mean($numbers) + " is the mean of ");
+        print(floatArrayToString($numbers, " , "));
+
+    }
+    if ($operation == "Median")
+    {
+        print (Median($numbers) + " is the median of ");
+        print(floatArrayToString($numbers, " , "));
+    }
+    
+    if ($operation == "Mode")
+    {
+        print (Mode($numbers));
+        print (" is the mode of ");
+        print(floatArrayToString($numbers, " , "));
+    }
+}  
+   
+
 
 
 float $numbers[] = {3, 5, 4};
 Calculator($numbers, "Add")
+Calculator($numbers, "Subtract")
