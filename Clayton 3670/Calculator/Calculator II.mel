@@ -326,7 +326,7 @@ global proc float[] Mode(float $numbers[])
 Mode({4, 5, 6, 2, 3, 4, 6, 4});
 
 
-/*
+
 float $operation = "Add";
 if ($operation) == "Add")
     {
@@ -349,5 +349,5 @@ if ($operation) == "Add")
             print (Add($numbers) + " is the sum of " + $addArray));
         }
     }
-*/
+
 
