@@ -1,0 +1,231 @@
+global proc float Add(float $numbers[])
+{
+	float $sum = $numbers[0];
+
+	for ($i=1; $i<size($numbers); $i++)
+	{
+		$sum += $numbers[$i];
+	}
+
+	return $sum;
+
+}
+Add({3, 5, 4})
+
+
+global proc float Subtract(float $numbers[])
+{
+	float $difference = $numbers[0];
+
+	for ($i=1; $i<size($numbers); $i++)
+	{
+		$difference -= $numbers[$i];
+	}
+
+	return $difference;
+
+}
+Subtract({3, 5, 4})
+
+
+
+global proc float Multiply(float $numbers[])
+{
+	float $result = $numbers[0];
+
+	for ($i=1; $i<size($numbers); $i++)
+	{
+		$result *= $numbers[$i];
+	}
+
+	return $result;
+
+}
+Multiply({3, 5, 4})
+
+
+global proc float Divide (float $numbers[])
+{
+	float $result = $numbers[0];
+
+	for ($i=1; $i<size($numbers); $i++)
+	{
+		$result /= $numbers[$i];
+	}
+
+	return $result;
+
+}
+Divide({30, 5, 2})
+
+
+global proc float Power (float $x, float $n)
+{
+	float $result = $x;
+
+	for ($i=1; $i<$n; $i++)
+	{
+		$result *= $x;
+	}
+
+	return $result;
+
+}
+Power (2, 8)
+
+
+global proc float Median (float $numbers[])
+{
+    float $midpoint;
+    float $midpointOne;
+    float $midpointTwo;
+    float $median;
+	$sorted = `sort $numbers`;
+	$sizeNum= `size($numbers)`;
+    $checkNum= $sizeNum%2;
+	if ($checkNum == 1) { //check if num is odd
+        int $midpoint = (($sizeNum/2.0) + 0.5); //divide by 2 and round decimal up by adding 0.5.
+        $median = $sorted[$midpoint];
+	} else {
+	    int $midpointTwo = ($sizeNum/2.0); //second midpoint
+	    int $midpointOne = $midpointTwo - 1; //first midpoint
+	    $median = (($sorted[$midpointOne]+$sorted[$midpointTwo])/2);
+	}
+	return $median;
+}
+Median({3,4,1,5})
+
+
+
+global proc float Mean (float $numbers[])
+{
+	float $sum = $numbers[0];
+
+	for ($i=1; $i<size($numbers); $i++)
+	{
+		$sum += $numbers[$i];
+	}
+
+	float $mean = $sum/size($numbers);
+	return $mean;
+}
+Mean ({3,4,1,5,4})
+
+
+global proc float[] Mode(float $numbers[])
+{
+    float $mode[];
+    float $values[];
+    int $freq[];
+    for($i=0; $i<size($numbers); $i++)
+    {
+        if (floatArrayContains($numbers[$i], $values) == 0)
+        {
+            $values[size($values)] = $numbers[$i];
+            $freq[size($values)] = 1;
+        }
+        else
+        {
+            int $index = floatArrayFind($numbers[$i], 0, $values);
+            $freq[$index] = $freq[$index] + 1;
+        }
+    }
+    
+    int $maxValue = 0;
+    
+    for($i = 0; $i<size($freq); $i++)
+    {
+        if($freq[$i] > $maxValue)
+            {
+                $maxValue = $freq[$i];
+            }
+    }
+    
+    while(intArrayFind($maxValue, 0, $freq) != -1)
+    {
+        int $modeIndex = intArrayFind($maxValue, 0, $freq);
+        $mode[size($mode)] = $values[$modeIndex];
+        $freq[$modeIndex] = 0;
+    }
+    
+    int $modeIndex = intArrayFind($maxValue, 0, $freq);
+
+    return $mode;
+}
+
+
+Mode({4, 5, 6, 2, 3, 4, 6, 4});
+
+
+
+global proc Calculator(float $numbers[], string $operation)
+{
+    if ($operation == "Add")
+    {
+        print("The sum of ");
+        print(floatArrayToString($numbers, " + "));
+        print( " is " + (Add($numbers)));
+
+    }
+
+    
+    if ($operation == "Subtract")
+    {
+        print("The subtraction of ");
+        print(floatArrayToString($numbers, " - "));
+        print( " is " + (Subtract($numbers)));
+    }
+    
+    if ($operation == "Divide")
+    {
+        print("The division of ");
+        print(floatArrayToString($numbers, " \ "));
+        print( " is " + (Divide($numbers)));
+    }
+    
+    if ($operation == "Multiply")
+    {
+        print("The multiplication of ");
+        print(floatArrayToString($numbers, " * "));
+        print( " is " + (Multiply($numbers)));
+    }
+    
+    if ($operation == "Power")
+    {
+        print (Power($numbers[0], $numbers[1]));
+        print (" is " + $numbers[0] + " to the power of " + $numbers[1]);
+    }
+    
+    if ($operation == "Mean")
+    {
+        print (Mean($numbers) + " is the mean of ");
+        print(floatArrayToString($numbers, " , "));
+
+    }
+    if ($operation == "Median")
+    {
+        print (Median($numbers) + " is the median of ");
+        print(floatArrayToString($numbers, " , "));
+    }
+    
+    if ($operation == "Mode")
+    {
+        print (Mode($numbers));
+        print (" is the mode of ");
+        print(floatArrayToString($numbers, " , "));
+    }
+}  
+   
+
+
+
+float $numbers[] = {3, 5, 4};
+Calculator($numbers, "Add");
+Calculator($numbers, "Subtract");
+Calculator($numbers, "Multiply");
+Calculator($numbers, "Divide");
+float $array[] = {3,4,1,5,4};
+Calculator($array, "Mean");
+Calculator($array, "Median");
+float $modeArray[] = {5, 6, 6, 2, 3, 4, 6, 4};
+Calculator($modeArray, "Mode");
