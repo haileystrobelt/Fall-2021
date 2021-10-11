@@ -1,0 +1,26 @@
+//-lst - Make a selection
+
+global proc float Randomizer(int $amount, float $minX, float $maxX, float $minY, float $maxY, float $minZ, float $maxZ)
+{
+	string $objs[] = `ls -sl`
+	
+	
+	for ($i=0; $i<size($objs); $i++)
+	{
+	    for ($j=0; $j<$amount; $j++)
+	    {
+	        string $dup = duplicate $objs[$i]; //create duplicate on current obj
+	        
+	        //generate rand vals (x,y,z)
+	        
+	        float $randX = rand $minX $maxX;
+	        float $randY = rand $minY $maxY;
+	        float $randZ = rand $minZ $maxZ;
+	    
+	        // $dup transform = ($randX, $randY, $randZ);
+	    }
+		
+	}
+	
+    return $objs;
+}
