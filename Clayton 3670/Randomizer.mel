@@ -1,26 +1,39 @@
-//-lst - Make a selection
+//try this code, or select manually
+$sphere = `CreatePolygonSphere`;
+select -r $sphere;
+select -r pSphere1;
 
 global proc float Randomizer(int $amount, float $minX, float $maxX, float $minY, float $maxY, float $minZ, float $maxZ)
 {
-	string $objs[] = `ls -sl`
+	string $objs[] = `ls -sl`;
+	float $randX;
+	float $randY;
+	float $randZ;
+	string $dup[];
 	
 	
 	for ($i=0; $i<size($objs); $i++)
 	{
 	    for ($j=0; $j<$amount; $j++)
 	    {
-	        string $dup = duplicate $objs[$i]; //create duplicate on current obj
+	        //create duplicate on current obj
+	        
+	        $dup = `duplicate $objs[$i]`; 
 	        
 	        //generate rand vals (x,y,z)
 	        
-	        float $randX = rand $minX $maxX;
-	        float $randY = rand $minY $maxY;
-	        float $randZ = rand $minZ $maxZ;
-	    
-	        // $dup transform = ($randX, $randY, $randZ);
+	        $randX = `rand $minX $maxX`;
+	        $randY = `rand $minY $maxY`;
+	        $randZ = `rand $minZ $maxZ`;
+	        
+	        // $dup transform will be ($randX, $randY, $randZ);
+	        
+	        move $randX $randY $randZ $dup ;
+	   
 	    }
 		
 	}
-	
-    return $objs;
+    return $randX;
 }
+
+Randomizer(3, 0, 50, 0, 50, 0, 50);
