@@ -1,7 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3de85636-f04b-4ea1-8fe1-57e5cca29810" name="Changes" comment="" />
+    <list default="true" id="3de85636-f04b-4ea1-8fe1-57e5cca29810" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/Clayton 3670.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Clayton 3670.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MacroScriptII.mel" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MacroScriptII_Result.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MelNotes_9-2.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MelVidNotes_9-6.mel" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Notes_9-7.01" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Notes_9-7.mel" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Practice_9-2.mel" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PythonVidNotes_9-9.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SnowBoi.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SnowmanBoi.mel" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
