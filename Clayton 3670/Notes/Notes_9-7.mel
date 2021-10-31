@@ -1,0 +1,29 @@
+string $objects[]; //store list of all object transforms
+
+string $temp[]; //array to temporarily hold items.
+
+
+//Create a new shape: [transform, shape] of sphere will be the result. And then store the transform and shape in temp array.
+$temp = `polySphere -r 1 -sx 20 -sy 20 -ax 0 1 0 -cuv 2 -ch 1`;
+//$temp == ["pSphere1", "polySphere1"]
+//put $temp[0] (or "pSphere1") into the array $objects.
+stringArrayInsertAtIndex(0, $objects, $temp[0]);
+
+move 2 3 5 $temp[0];
+
+//repeat
+$temp = `polySphere -r 1 -sx 20 -sy 20 -ax 0 1 0 -cuv 2 -ch 1`;
+stringArrayInsertAtIndex(0, $objects, $temp[0]);
+
+
+//$objects == ["pSphere1", "pSphere2"]
+
+
+$temp = `duplicate -rr $objects`;
+//$temp == ["pSphere3", "pSphere4"]
+
+$objects = stringArrayCatenate($objects, $temp);
+
+polyUnite [-any flags here] $objects
+
+print($objects);

@@ -1,0 +1,108 @@
+//Sphere Bottom
+polySphere -r 3 -sx 20 -sy 20 -cuv 2 -ch 1;
+move -r 0 3 0 ;
+
+//Sphere Middle
+polySphere -r 2 -sx 20 -sy 20 -cuv 2 -ch 1;
+move -r 0 7 0 ;
+
+//Sphere Top
+polySphere -r 1.5 -sx 20 -sy 20 -cuv 2 -ch 1;
+move -r 0 9.7 0 ;
+
+
+//Left Eye
+polySphere -r 1 -sx 20 -sy 20 -cuv 2 -ch 1;
+scale -r 0a.226478 0.226478 0.226478 ;
+move -r 1.396655 9.797392 -0.526051  ;
+
+
+//Right Eye
+duplicate -rr;
+move -r 0 0 1.019679 ;
+
+
+//Hat
+string $hat[];
+$hat = `polyCylinder -r .7 -h 2 -sx 20 -sy 1 -sz 1 -rcp 0 -cuv 3 -ch 1`;
+move -r 0 11.731483 0;
+
+/*Wanted to do Add Edge Loop? Have to experiment more later.
+select ($temp[0] + ".e[0:3]");
+polySplitRing -ch on -splitType 1 -weight 0.124365 -smoothingAngle 30 -fixQuads 1 
+-insertWithEdgeFlow 0 $temp; */
+
+//Extrued Hat to be larger.
+select -add pCylinder1.f[0:19];
+polyExtrudeFacet -constructionHistory 1 -keepFacesTogether 1 -pvx -1.192092896e-07 -pvy 10.89708747 
+-pvz -1.788139343e-07 -divisions 1 -twist 0 -taper 1 -off 0 -thickness 0 
+-smoothingAngle 30 ($hat[0] + ".f[0:19]"); //($temp[0] + ".f[215]");
+setAttr "polyExtrudeFace1.localTranslate" -type double3 0.104192 0 0.336836 ;
+
+//Bottom Hat
+$bHat = `duplicate -rr $hat`;
+move -r 0 -1.048626 0 ;
+scale -r 1.722446  0.221985 1.722446 ;
+polyBevel3 -fraction 0.2 -offsetAsFraction 1 -autoFit 1 -depth 1 -mitering 0 -miterAlong 0 -chamfer 1 -segments 1 -worldSpace 1 -smoothingAngle 30 -subdivideNgons 1 -mergeVertices 1 -mergeVertexTolerance 0.0001 -miteringAngle 180 -angleTolerance 180 -ch 1 pCylinder1;
+polyBevel3 -fraction 0.2 -offsetAsFraction 1 -autoFit 1 -depth 1 -mitering 0 -miterAlong 0 -chamfer 1 -segments 1 -worldSpace 1 -smoothingAngle 30 -subdivideNgons 1 -mergeVertices 1 -mergeVertexTolerance 0.0001 -miteringAngle 180 -angleTolerance 180 -ch 1 pCylinder2;
+
+//Button Top
+polyCylinder -r 1 -h 2 -sx 20 -sy 1 -sz 1 -rcp 0 -cuv 3 -ch 1;
+rotate -r -os -fo 0 0 -90 ;
+scale -r 0.197319 0.186315 0.197319 ;
+move -r 0 7.891923 0 ;
+move -r 1.74479 0 0 ;
+rotate -r -os -fo 0 0 20.516006 ;
+
+//Button Bottom
+duplicate -rr;
+move -r 0 -1.828331 0 ;
+rotate -r -os -fo 0 0 -45.51899 ;
+
+//Button Middle
+duplicate -rr;
+move -r 0 0.949596 0 ;
+move -r 0.211693 0 0 ;
+rotate -r -os -fo 0 0 24.030047 ;
+
+//Nose
+polyCone -r 1 -h 2 -sx 20 -sy 1 -sz 0 -rcp 0 -cuv 3 -ch 1;
+setAttr "pCone1.rotateZ" -90;
+scale -r 0.271283 1 0.271283 ;
+scale -r 1 0.761719 1 ;
+move -r 0 9.398454 0 ;
+move -r 2.064312 0 0 ;
+scale -r 1 0.63487 1 ;
+move -r -0.202799 0 0 ;
+
+//Left Arm
+polyCylinder -r 1 -h 2 -sx 20 -sy 1 -sz 1 -rcp 0 -cuv 3 -ch 1;
+move -r 0 7.295572 0 ;
+move -r 0 0 -2.992919 ;
+rotate -r -os -fo -85.374977 0 0 ;
+scale -r 0.16929 1.373268 0.16929 ;
+
+//Left Bottom Finger
+duplicate -rr;
+move -r 0 -0.0930185 -1.542745 ;
+scale -r 0.415389 0.415389 0.415389 ;
+rotate -r -os -fo -22.748574 0 0 ;
+
+//Left Bottom Finger
+duplicate -rr;
+rotate -r -os -fo 37.953739 0 0 ;
+move -r 0 0.334586 -0.0401948 ;
+
+//Select/Mirror Left Arm
+select -r pCylinder6 ;
+select -tgl pCylinder8 ;
+select -tgl pCylinder7 ;
+polyMirrorFace  -cutMesh 1 -axis 2 -axisDirection 0 -mergeMode 1 -mergeThresholdType 0 -mergeThreshold 0.001 -mirrorAxis 2 -mirrorPosition 0 -smoothingAngle 30 -flipUVs 0 -ch 1 pCylinder6;
+polyMirrorFace  -cutMesh 1 -axis 2 -axisDirection 0 -mergeMode 1 -mergeThresholdType 0 -mergeThreshold 0.001 -mirrorAxis 2 -mirrorPosition 0 -smoothingAngle 30 -flipUVs 0 -ch 1 pCylinder8;
+polyMirrorFace  -cutMesh 1 -axis 2 -axisDirection 0 -mergeMode 1 -mergeThresholdType 0 -mergeThreshold 0.001 -mirrorAxis 2 -mirrorPosition 0 -smoothingAngle 30 -flipUVs 0 -ch 1 pCylinder7;
+
+
+//Ground Plane
+CreatePolygonCube;
+scale -r 30 1 30 ;
+
