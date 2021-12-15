@@ -8,28 +8,35 @@ class ToolUI():
         self.name_txtfieldbtn_grp = ''
 
 
-    def create(self):
+    def create(self): # Creates our window
         self.delete()
 
         self.m_window = cmds.window(self.m_window,
                                     title="My Tools",
                                     widthHeight=(200, 55))
+
         m_column = cmds.columnLayout(parent=self.m_window,
                                      adjustableColumn=True)
-        cmds.button(parent=m_column, label= 'Ball', command='cmds.polySphere()')
-        cmds.button(parent=m_column, label='Red Color', command=lambda x: self.color_button_cmd(13))
-        cmds.button(parent=m_column, label='Green Color', command=lambda x: self.color_button_cmd(13))
-        cmds.button(parent=m_column, label='Blue Color', command=lambda x: self.color_button_cmd(13))
 
-        #Text Field Components
+        cmds.button(parent=m_column, label='Ball', command='cmds.polySphere()')
+        cmds.button(parent=m_column, label='Red Color', command=lambda *x: self.color_button_cmd(13))
+        cmds.button(parent=m_column, label='Green Color', command=lambda x: self.color_button_cmd(16))
+        cmds.button(parent=m_column, label='Blue Color', command=lambda x: self.color_button_cmd(5))
+
+        # Text Field Components
         self.name_txtfield = cmds.textField(parent=m_column)
         cmds.button(parent=m_column, command=lambda *x: self.say_hello_cmds())
-
 
         self.name_txtfieldbtn_grp = cmds.textFieldButtonGrp(parent=m_column,
                                                             label='Name',
                                                             buttonLabel='Say Hello!',
                                                             buttonCommand=lambda *x: self.txtfieldbtn_cmd())
+
+        m_grid = cmds.gridLayout(parent=self.m_window,
+                                 columnsResizable=True)
+        for i in range(0, 32):
+            cmds.button(parent=m_grid, label=str(i), command=lambda *x: self.color_button_cmd(i))
+
 
         cmds.showWindow(self.m_window)
 
@@ -54,8 +61,8 @@ class ToolUI():
     def color_button_cmd(self, color):
         import tools
         importlib.reload(tools)
-        txt_data = cmds.textField(self.name_txtfield, q=True, text=True)
-        tools.ChangeColor(txt_data)
+        print(color)
+        tools.ChangeColor(color)
         return
 
 myUI = ToolUI()
