@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3de85636-f04b-4ea1-8fe1-57e5cca29810" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Final/Color_Control.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Final/Renamer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ToolUI.py" beforeDir="false" afterPath="$PROJECT_DIR$/Final/ToolUI.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tools.py" beforeDir="false" afterPath="$PROJECT_DIR$/Final/tools.py" afterDir="false" />
-    </list>
+    <list default="true" id="3de85636-f04b-4ea1-8fe1-57e5cca29810" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
