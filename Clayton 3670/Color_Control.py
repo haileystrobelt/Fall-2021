@@ -23,7 +23,7 @@ def colorChange(i, ctrl):
 
 
 
-def createControl(color_ind):
+def createControl():
     # matchtransformations can change both location and orientations to match transforms of selected objs
     # cmds.matchTransform('cylinder1', 'cone1')
 
@@ -36,7 +36,7 @@ def createControl(color_ind):
         cmds.rotate('90deg', 0, 0, r=True)  # fix incorrect rotation
         grp = cmds.group(ctrl, n='Grp_Crtl')
 
-        colorChange(color_ind, ctrl) # change control's color
+        colorChange(ctrl) # change control's color
 
     elif len_sels == 1: # if there is only one selection, name it
         ctrl_name = sels[0] + "_Ctrl"
@@ -46,7 +46,7 @@ def createControl(color_ind):
         grp = cmds.group(ctrl, n='Grp_Crtl')
         cmds.matchTransform(grp, sels[0]) # set control to match transforms of selection
 
-        colorChange(color_ind, ctrl)  # change control's color
+        colorChange(ctrl)  # change control's color
 
     else:
         for sel in sels:
@@ -59,7 +59,7 @@ def createControl(color_ind):
             grp = cmds.group(ctrl[0], n='Grp_Crtl')
             cmds.matchTransform(ctrl[0], sel)  # set control to match transforms of selection
 
-            colorChange(color_ind, ctrl)  # change control's color
+            colorChange( ctrl)  # change control's color
 
 
 
